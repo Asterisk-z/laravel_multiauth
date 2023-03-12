@@ -17,7 +17,7 @@ class LoginController extends Controller
     | redirecting them to your home screen. The controller uses a trait
     | to conveniently provide its functionality to your applications.
     |
-    */
+     */
 
     use AuthenticatesUsers;
 
@@ -37,4 +37,27 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    // public function login(Request $request)
+    // {
+    //     // dd('hello');
+
+    //     $data = $request->validate([
+    //         'email' => 'required|string',
+    //         'password' => 'required|string',
+    //     ]);
+
+    //     if (method_exists($this, 'hasTooManyLoginAttempts') &&
+    //         $this->hasTooManyLoginAttempts($request)) {
+    //         $this->fireLockoutEvent($request);
+
+    //         return $this->sendLockoutResponse($request);
+    //     }
+
+    //     dd(Auth::guard()->attempt(
+    //         $this->credentials($request), $request->boolean('remember')
+    //     ));
+
+    //     dd($data);
+    // }
 }
